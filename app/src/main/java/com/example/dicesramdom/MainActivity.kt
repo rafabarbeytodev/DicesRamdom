@@ -1,5 +1,6 @@
 package com.example.dicesramdom
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding
     private val mViewModel: MainViewModel by viewModels()
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -22,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         mViewModel.getNumberDice().observe(this){
-            val time: Long= 150
             mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.one450x400))
             Handler(Looper.getMainLooper()).postDelayed({
                 mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.two450x400))
@@ -37,10 +38,10 @@ class MainActivity : AppCompatActivity() {
                                 3 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.three450x400))
                                 4 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.four450x400))
                             }
-                        }, time)
-                    }, time)
-                }, time)
-            }, time)
+                        }, timeSlot)
+                    }, timeSlot)
+                }, timeSlot)
+            }, timeSlot)
         }
     }
 }
