@@ -24,19 +24,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         mViewModel.getNumberDice().observe(this){
-            mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.one450x400))
+            mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.mov1))
             Handler(Looper.getMainLooper()).postDelayed({
-                mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.two450x400))
+                mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.mov2))
                 Handler(Looper.getMainLooper()).postDelayed({
-                    mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.three450x400))
+                    mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.mov3))
                     Handler(Looper.getMainLooper()).postDelayed({
-                        mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.four450x400))
+                        mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.mov4))
                         Handler(Looper.getMainLooper()).postDelayed({
                             when(it){
-                                1 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.one450x400))
-                                2 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.two450x400))
-                                3 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.three450x400))
-                                4 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.four450x400))
+                                1 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.one))
+                                2 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.two))
+                                3 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.three))
+                                4 -> mainBinding.ivDice.setImageDrawable(getDrawable(R.drawable.four))
                             }
                         }, timeSlot)
                     }, timeSlot)
